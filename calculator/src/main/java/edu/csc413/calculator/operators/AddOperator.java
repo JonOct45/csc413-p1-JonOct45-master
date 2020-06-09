@@ -8,9 +8,9 @@ public int priority(){
     return 1;
     }
 
-public execute(Operand operand1, Operand operand2){
-    int sum = operand1 + operand2;
-    return sum;
+  Operand execute(Operand operand1, Operand operand2){
+    int value = operand1 + operand2;
+    return value;
 
 }
 }

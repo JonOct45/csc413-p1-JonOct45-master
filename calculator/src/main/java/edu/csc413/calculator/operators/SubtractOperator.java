@@ -4,9 +4,11 @@ public class SubtractOperator extends Operator{
         return 1;
     }
 
-    SubtractOperator execute(Operand operand1, Operand operand2){
-        int sub = operand1-operand2;
-        return sub;
+    //SubtractOperator execute(Operand operand1, Operand operand2)
+    Operand execute(Operand operand1, Operand operand2)
+    {
+        int value = operand1-operand2;
+        return value;
 
     }
 }

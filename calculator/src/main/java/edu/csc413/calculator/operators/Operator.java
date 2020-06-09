@@ -10,7 +10,17 @@ public abstract class Operator {
     //VALUEs will be the instances of Operators, so we need
     //to get from another file. So we have the +-()*^ for it,
     //What will we do if there are ()?
-    static HashMap<String, String> objectWeNeed;
+
+
+    //static HashMap<String, String> operators;
+    HashMap operators = new HashMap();
+
+    operators.put("+", new AddOperator());
+    operators.put("-", new SubtractOperator());
+    operators.put("/", new DivideOperator());
+    operators.put("*", new MultiplyOperator());
+    operators.put("(", new OpenParentheses());
+    operators.put(")", new ClosedParentheses());
 
     // The Operator class should contain an instance of a HashMap
     // This map will use keys as the tokens we're interested in,
@@ -27,7 +37,11 @@ public abstract class Operator {
      * retrieve the priority of an Operator
      * @return priority of an Operator as an int
      */
-    public abstract int priority();
+    //Priority will be inside of the operator classes.
+
+    public abstract int priority(){
+        while operator.priority() ==
+    }
 
     /**
      * Abstract method to execute an operator given two operands.
@@ -44,6 +58,7 @@ public abstract class Operator {
      * Think about what happens if we add more operators.
      */
     public static Operator getOperator(String token) {
+
         return null;
     }
 
