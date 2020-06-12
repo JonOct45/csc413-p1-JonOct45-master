@@ -25,7 +25,7 @@ public class EvaluatorUI extends JFrame implements ActionListener {
     private Button[] buttons = new Button[buttonText.length];
 
     public static void main(String argv[]) {
-        new EvaluatorUI();
+       EvaluatorUI calculator new EvaluatorUI();
     }
 
     public EvaluatorUI() {

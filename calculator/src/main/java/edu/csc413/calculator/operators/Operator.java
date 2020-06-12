@@ -6,21 +6,25 @@ import edu.csc413.calculator.evaluator.Operand;
 public abstract class Operator {
 
 
+
     //What keys and tokens do we need? Thinking of private.
     //VALUEs will be the instances of Operators, so we need
     //to get from another file. So we have the +-()*^ for it,
     //What will we do if there are ()?
+    //
 
-
-    //static HashMap<String, String> operators;
-    HashMap operators = new HashMap();
-
+    private static HashMap<String, String> operators;
+   // HashMap operators = new HashMap();
+static {
+    operators = new HashMap<>();
     operators.put("+", new AddOperator());
     operators.put("-", new SubtractOperator());
     operators.put("/", new DivideOperator());
     operators.put("*", new MultiplyOperator());
     operators.put("(", new OpenParentheses());
     operators.put(")", new ClosedParentheses());
+    operators.put("^", new PowerOperator());
+}
 
     // The Operator class should contain an instance of a HashMap
     // This map will use keys as the tokens we're interested in,
@@ -37,12 +41,12 @@ public abstract class Operator {
      * retrieve the priority of an Operator
      * @return priority of an Operator as an int
      */
-    //Priority will be inside of the operator classes.
+
 
     public abstract int priority(){
-        while operator.priority() ==
-    }
 
+
+}
     /**
      * Abstract method to execute an operator given two operands.
      * @param operandOne first operand of operator
@@ -57,10 +61,17 @@ public abstract class Operator {
      * for example token.equals("+") and so on.
      * Think about what happens if we add more operators.
      */
-    public static Operator getOperator(String token) {
+    public static boolean check(String token) {
 
-        return null;
+        if (operators.containsKey(token)
+        {
+            return true;
+        } else {
+            return false;
+        }
     }
+
+
 
     /**
      * used to retrieve an operator from our HashMap.
@@ -70,13 +81,9 @@ public abstract class Operator {
      * @param token key of the operator we want to retrieve
      * @return reference to a Operator instance.
      */
-    public static boolean check(String token) {
-        try{
-            Integer.parseInt(token);
-        }catch(Exception ex) {
-            return false;
-        }
-        return true;
+    public static Operator getOperator(String token) {
+
+        return operators.get(token);
     }
 
 }

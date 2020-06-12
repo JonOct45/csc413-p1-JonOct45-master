@@ -4,8 +4,9 @@ public class MultiplyOperator extends Operator{
         return 2;
     }
 
-    MultiplyOperator execute(Operand operand1, Operand operand2){
-        int products = operand1*operand2;
+    private int value;
+    public abstract Operand execute(Operand operandOne, Operand operandTwo){
+        int value = operandOne.getValue*operandTwo.getValue;
         return products;
     }
 

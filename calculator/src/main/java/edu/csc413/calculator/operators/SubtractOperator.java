@@ -1,13 +1,18 @@
 public class SubtractOperator extends Operator{
-//Priority 1, execute method
+//Priority 1, execute method, abstract
+
+
+    private int valueCalculated;
+
     public int priority(){
         return 1;
     }
 
     //SubtractOperator execute(Operand operand1, Operand operand2)
-    Operand execute(Operand operand1, Operand operand2)
+   public Operand execute(Operand operandOne, Operand operandTwo)
     {
-        int value = operand1-operand2;
+        int valueCaculated = operandOne.getValue()-operandTwo.getValue();
+        value = new Operand(valueCalculated);
         return value;
 
     }
